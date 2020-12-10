@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 def canUnlockAll(boxes):
+    if len(boxes) == 1:
+        return True
     keys = [0]
     opened = [0]
     new_key = True
