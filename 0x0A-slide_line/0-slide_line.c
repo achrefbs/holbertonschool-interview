@@ -1,6 +1,4 @@
 #include "slide_line.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 /**
  * reverse - reverse the list
