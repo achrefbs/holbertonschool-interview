@@ -30,10 +30,13 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 			{
 				if (save->n == value)
 				{
+					printf(checker, save->index, save->n);
 					return (save);
 				}
+				printf(checker, save->index, save->n);
+				save = save->next;
 			}
-			return (save);
+			//return (save);
 		}
 		if (value < save->express->n)
 		{
