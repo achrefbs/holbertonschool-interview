@@ -25,7 +25,15 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 		if (save->express->n == value)
 		{
 			printf(checker, save->express->index, save->express->n);
-			return (save->express);
+			printf(found, save->index, save->express->index);
+			while (save->next != NULL)
+			{
+				if (save->n == value)
+				{
+					return (save);
+				}
+			}
+			return (save);
 		}
 		if (value < save->express->n)
 		{
@@ -35,14 +43,11 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 			{
 				printf(checker, save->index, save->n);
 				if (save->n == value)
-				{
 					return (save);
-				}
 			}
 		}
 		save = save->express;
 			printf(checker, save->index, save->n);
-
 	}
 	tmp = save;
 	while (tmp->next != NULL)
@@ -61,6 +66,5 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 		save = save->next;
 	}
 	printf(checker, save->index, save->n);
-
 	return (NULL);
 }
